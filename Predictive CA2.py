@@ -1,4 +1,3 @@
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -30,7 +29,6 @@ print(df.duplicated().sum())
 # Statistical summary
 print("\nSTATISTICAL SUMMARY")
 print(df.describe())
-
 # =================================
 # EDA PART 2: STATE-WISE ANALYSIS
 # =================================
@@ -52,7 +50,6 @@ plt.ylabel("Total Actual Generation (MU)")
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
 plt.show()
-
 
 # =========================================
 # EDA PART 3: YEAR-WISE GENERATION ANALYSIS
@@ -135,7 +132,6 @@ plt.xticks(rotation=30)
 plt.tight_layout()
 plt.show()
 
-
 # =========================================
 # EDA PART 6: CORRELATION HEATMAP
 # =========================================
@@ -157,7 +153,6 @@ plt.title("Correlation Heatmap - Electricity Generation")
 plt.tight_layout()
 plt.show()
 
-
 # =========================================
 # EDA PART 7: FEATURE RELATIONSHIP ANALYSIS
 # =========================================
@@ -173,7 +168,6 @@ plt.ylabel("Actual Generation (MU)")
 plt.grid(True)
 plt.tight_layout()
 plt.show()
-
 
 # Plot 2: Installed Capacity vs Actual Generation
 
@@ -279,7 +273,6 @@ ml_df.to_csv("Electricity_Generation_ML_Dataset.csv",index=False)
 print("\nML DATASET SAVED SUCCESSFULLY!")
 
 #------------------------------------------------
-
 import os
 
 # Save dataset in the same folder as Python file
