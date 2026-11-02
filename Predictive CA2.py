@@ -7,8 +7,6 @@ import seaborn as sns
 # Load dataset
 df = pd.read_csv(r"C:\Users\himan\OneDrive\Desktop\INT234 CA2\CEA_Statewise_Electricity_Generation_2019-2026.csv")
     
-
-
 # Display first 5 records
 print("\nFIRST 5 RECORDS")
 print(df.head())
@@ -32,8 +30,6 @@ print(df.duplicated().sum())
 # Statistical summary
 print("\nSTATISTICAL SUMMARY")
 print(df.describe())
-
-
 
 # =================================
 # EDA PART 2: STATE-WISE ANALYSIS
@@ -117,7 +113,6 @@ plt.ylabel("Average Actual Generation (MU)")
 plt.grid(True)
 plt.tight_layout()
 plt.show()
-
 
 # =========================================
 # EDA PART 5: REGION-WISE ANALYSIS
@@ -407,10 +402,8 @@ results = []
 
 for name, model in models.items():
 
-    pipeline = Pipeline([
-        ("preprocessor", preprocessor),
-        ("model", model)
-    ])
+    pipeline = Pipeline([("preprocessor", preprocessor),("model", model)])
+       
 
     pipeline.fit(X_train, y_train)
     predictions = pipeline.predict(X_test)
@@ -419,12 +412,8 @@ for name, model in models.items():
     rmse = np.sqrt(mean_squared_error(y_test, predictions))
     r2 = r2_score(y_test, predictions)
 
-    results.append({
-        "Model": name,
-        "MAE": mae,
-        "RMSE": rmse,
-        "R2 Score": r2
-    })
+    results.append({"Model": name, "MAE":mae, "RMSE":rmse, "R2 Score": r2})
+       
 
 comparison = pd.DataFrame(results)
 
